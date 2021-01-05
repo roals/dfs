@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-          - version=v2.5.4
+          - version=v3.0.22
     links:
       - redis
     ports:
