@@ -1,14 +1,14 @@
 FROM node:8-alpine
-MAINTAINER Andrei Poenaru <donot@keemail.me>
+MAINTAINER roals <donot@keemail.me>
 
 # The Send version to build (git treeish)
-ARG version=v2.5.4
+ARG version=v3.0.22
 
 RUN apk add --no-cache git
 RUN addgroup -S -g 10001 app && adduser -S -D -G app -u 10001 app
 
 # Download the Send code
-RUN git clone https://github.com/mozilla/send.git /app -b $version --depth=1
+RUN git clone https://github.com/roals/send.git /app -b $version --depth=1
 WORKDIR /app
 
 # First step of the build (which Mozilla do on the host)
